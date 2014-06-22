@@ -1,0 +1,13 @@
+require 'minitest/autorun'
+class Money
+  def initialize(dollars)
+  end
+end
+
+class MoneyTest < MiniTest::Unit::TestCase
+  def test_that_i_can_make_money
+    five_dollars = Money.new
+    assert_not_nil
+  end
+end
+MoneyTest.new

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../../public/favicon.ico" type="image/x-icon">
+    <link href='http://fonts.googleapis.com/css?family=Orbitron|Allerta+Stencil' rel='stylesheet' type='text/css'>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "NEXT" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1 style="font-family: Orbitron; font-size: 40px; padding-top: 4px;"><a href="http://0.0.0.0:3000/">NEXT</a></h1>
+    </li>
+     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="http://0.0.0.0:3000/"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+
+    <!-- Left Nav Section -->
+    <ul class="left">
+      <li><a href="http://0.0.0.0:3000/tasks">To do's</a></li>
+      <li><a href="#">To do's done</a></li>
+      <li><a href="#">Late to do's</a></li>
+      <li><a href="http://0.0.0.0:3000/tasks/new">New to do</a></li>
+    </ul>
+  </section>
+</nav>
+
+
+    <%= yield %>
+    <%= javascript_include_tag "application" %>
+  </body>
+</html>
