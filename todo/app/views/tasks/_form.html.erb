@@ -25,8 +25,9 @@
   </div>
   <div class="field">
     <%= f.label :todo_list_id %>
-
-    <%= f.collection_select(:task, :todo_list_id, TodoList.all, :id, :title) %>
+    <% todo_lists_array = TodoList.all.map { |todo_list| [todo_list.name, todo_list.id] } %>
+    <% options_for_select(todo_lists_array) %>
+    <%= f.collection_select(:task, :todo_list_id, options_for_select(todo_lists_array), :id, :title => "something") %>
   </div>
   <div class="field datetime">
     <%= f.label :start_date %><br>
